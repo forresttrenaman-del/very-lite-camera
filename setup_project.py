@@ -15,9 +15,10 @@ import base64
 import sys
 
 def create_directory(path):
-    """Create directory if it doesn't exist"""
-    os.makedirs(path, exist_ok=True)
-    print(f"✓ Created directory: {path}")
+       """Create directory if it doesn't exist"""
+       if path and path != '.':
+           os.makedirs(path, exist_ok=True)
+           print(f"✓ Created directory: {path}")
 
 def write_file(path, content, is_binary=False):
     """Write content to file"""
